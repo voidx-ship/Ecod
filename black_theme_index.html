@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A Little Surprise</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:20px;background:#000;color:#f5f5f5;font-family:Arial,sans-serif;text-align:center}.card{width:min(92vw,480px);padding:34px 22px;background:#101010;border:1px solid #292929;border-radius:18px}h1{margin:0 0 12px;font-size:clamp(26px,6vw,34px)}p{margin:0;color:#aaa;font-size:16px}.buttons{display:flex;justify-content:center;gap:12px;margin-top:26px}button{border:1px solid #444;border-radius:9px;padding:12px 25px;background:#eee;color:#111;font-size:16px;font-weight:700;cursor:pointer}#no{background:#222;color:#eee}#result{display:none;margin-top:20px;font-size:19px}video{display:none;width:100%;margin-top:18px;border-radius:10px;background:#000}
+</style></head><body><main class="card"><h1>Are you ready?</h1><p>Click below to continue.</p><div class="buttons"><button id="yes">Yes</button><button id="no">No</button></div><div id="result" role="status"></div><video id="prankVideo" controls playsinline preload="metadata"><source src="VID_20261108211727.mp4" type="video/mp4"></video></main>
+<script>
+const result=document.getElementById('result'),video=document.getElementById('prankVideo');
+document.getElementById('yes').addEventListener('click',()=>{result.style.display='block';result.textContent='Surprise!';video.style.display='block';video.play().catch(()=>{result.textContent='Surprise! Press Play on the video below.';});});
+document.getElementById('no').addEventListener('click',()=>{result.style.display='block';result.textContent='Okay, maybe next time.';video.pause();video.style.display='none';});
+</script></body></html>
